@@ -90,11 +90,12 @@ static void save_settings() {
   gboolean TimeToNextWord = gtk_switch_get_active(global_TimeToNextWordSwitch);
   config_setting_t *TimeToNextWord_setting = config_setting_add(root, "time_based_next_word", CONFIG_TYPE_BOOL);
   config_setting_set_bool(TimeToNextWord_setting, TimeToNextWord);
-/*
+
   double time_based_next_word_time = gtk_spin_button_get_value(global_TimeToNextWordSpinn);
+	  time_based_next_word_time = 10;
   config_setting_t *time_based_next_word_time_setting = config_setting_add(root, "time_based_next_word_time", CONFIG_TYPE_FLOAT);
   config_setting_set_float(time_based_next_word_time_setting, time_based_next_word_time);
-    */
+    
   gboolean make_statistics = gtk_switch_get_active(global_StatisticsSwitch);
   config_setting_t *make_statistics_setting = config_setting_add(root, "make_statistics", CONFIG_TYPE_BOOL);
   config_setting_set_bool(make_statistics_setting, make_statistics);
@@ -189,14 +190,14 @@ if (config_lookup_string(&cfg, "font", &font_str)) {
   if (config_lookup_bool(&cfg, "time_based_next_word", &TimeToNextWord)) {
     gtk_switch_set_active(global_TimeToNextWordSwitch, TimeToNextWord);
   }
-/*
+
   double time_based_next_word_time;
   if (config_lookup_float(&cfg, "time_based_next_word_time", &time_based_next_word_time)) {
     if (words_per_time > 0) {
       gtk_spin_button_set_value(global_TimeToNextWordSpinn, time_based_next_word_time);
     }
   }
-*/
+
 
   const char *text_str;
   if (config_lookup_string(&cfg, "text", &text_str)) {
