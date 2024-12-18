@@ -92,6 +92,7 @@ static void save_settings() {
   config_setting_set_bool(TimeToNextWord_setting, TimeToNextWord);
 
   double time_based_next_word_time = gtk_spin_button_get_value(global_TimeToNextWordSpinn);
+  g_print("%s\n",time_based_next_word_time);
   config_setting_t *time_based_next_word_time_setting = config_setting_add(root, "time_based_next_word_time", CONFIG_TYPE_FLOAT);
   config_setting_set_float(time_based_next_word_time_setting, time_based_next_word_time);
     
